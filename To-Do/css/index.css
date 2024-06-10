@@ -81,3 +81,6 @@ h1,h3{
 .cu-p{
     cursor: pointer;
 }
+.strike{
+    text-decoration: line-through;
+}
