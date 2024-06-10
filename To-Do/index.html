@@ -12,34 +12,12 @@
     <div class="Main">
         <div class="header">
             <h1>ToDo List App</h1>
-            <button><img src="./../Img/plus.svg" width="30px" height="30px"></button>
+            <button class="cu-p" onclick="New()"><img src="./../Img/plus.svg" width="30px" height="30px"></button>
         </div>
-        <h3>ToDo's :</h3>
-        <div class="listtodos" id="listtodos">
-            <div class="option">
-                <div class="checkboxcontainer">
-                    <input type="checkbox">
-                    <label>Remind Leela to do about</label>
-                </div>
-                <div style="margin-right: 10px;">
-                    <img class="cu-p" src="./../Img/edit.svg" width="35px" height="30px">
-                    <img class="cu-p" src="./../Img/Delete.svg" width="35px" height="30px">
-                </div>
-            </div>
-        </div>
-        <h3>Completed :</h3>
-        <div class="listtodos" id="listcompleted">
-            <div class="option">
-                <div class="checkboxcontainer">
-                    <input type="checkbox" checked>
-                    <label class="strike">Remind Leela to do about</label>
-                </div>
-                <!-- <div style="margin-right: 10px;">
-                    <img class="cu-p" src="./../Img/edit.svg" width="35px" height="30px">
-                    <img class="cu-p" src="./../Img/Delete.svg" width="35px" height="30px">
-                </div> -->
-            </div>
-        </div>
+        <h3 id="h3.Todo">ToDo's :</h3>
+        <div class="listtodos" id="listtodos"></div>
+        <h3 id="h3.Completed">Completed :</h3>
+        <div class="listtodos" id="listcompleted"></div>
         <p style="position: absolute; bottom: 0px; left: 40%;">With love from, Leela Madhava Rao</p>
     </div>
     

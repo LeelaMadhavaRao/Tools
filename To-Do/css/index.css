@@ -84,3 +84,6 @@ h1,h3{
 .strike{
     text-decoration: line-through;
 }
+.display-none{
+    display: none;
+}
