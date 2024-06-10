@@ -9,7 +9,9 @@ function RenderLayout(){
     if(ToDo.length === 0 && Completed.length === 0){
         document.getElementById('h3.Completed').classList.add('display-none');
         document.getElementById('h3.Todo').classList.add('display-none');
-        return;
+    }else{
+        document.getElementById('h3.Completed').classList.remove('display-none');
+        document.getElementById('h3.Todo').classList.remove('display-none');
     }
     //ToDo's
     var html = '';
@@ -20,9 +22,9 @@ function RenderLayout(){
                     <label>${ToDo[i]}</label>
                 </div>
                 <div style="margin-right: 10px;">
-                    <img class="cu-p" src="./../Img/edit.svg" width="35px" height="30px">
-                    <img class="cu-p" src="./../Img/Delete.svg" width="35px" height="30px">
-                </div>`;
+                    <img class="cu-p" src="./../Img/edit.svg" width="35px" height="30px" onclick="Edit(${i})">
+                    <img class="cu-p" src="./../Img/Delete.svg" width="35px" height="30px" onclick="Delete(${i})">
+                </div></div>`;
     }
     document.getElementById('listtodos').innerHTML = html;
     //Completed
@@ -32,7 +34,7 @@ function RenderLayout(){
                 <div class="checkboxcontainer">
                     <input type="checkbox" checked>
                     <label class='strike'>${ToDo[i]}</label>
-                </div>`;
+                </div></div>`;
     }
     document.getElementById('listcompleted').innerHTML = html;
 }
@@ -46,5 +48,16 @@ function Retrive_Data(){
     RenderLayout();
 }
 function New(){
-    alert("Hey Code me First !")
+    ToDo.unshift("New ToDo");
+    Save();
+    RenderLayout();
+}
+function Delete(item){
+    ToDo.pop(item);
+    Save();
+    RenderLayout();
+}
+function Edit(item){
+    alert("Leela Code me First")
+    
 }
