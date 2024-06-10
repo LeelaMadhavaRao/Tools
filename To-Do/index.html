@@ -12,17 +12,33 @@
     <div class="Main">
         <div class="header">
             <h1>ToDo List App</h1>
-            <button>+</button>
+            <button><img src="./../Img/plus.svg" width="30px" height="30px"></button>
         </div>
         <h3>ToDo's :</h3>
-        <div class="option">
-            <input type="checkbox">
-            <label>Remind Leela to do about <img src="./../Img/edit.svg" width="15px" height="15px"><img src="./../Img/Delete.svg" width="15px" height="15px"></label>
+        <div class="listtodos" id="listtodos">
+            <div class="option">
+                <div class="checkboxcontainer">
+                    <input type="checkbox">
+                    <label>Remind Leela to do about</label>
+                </div>
+                <div style="margin-right: 10px;">
+                    <img class="cu-p" src="./../Img/edit.svg" width="35px" height="30px">
+                    <img class="cu-p" src="./../Img/Delete.svg" width="35px" height="30px">
+                </div>
+            </div>
         </div>
         <h3>Completed :</h3>
-        <div class="option">
-            <input type="checkbox" checked/>
-            <label style="text-decoration: line-through;">Remind Leela to do about <img src="./../Img/edit.svg" width="15px" height="15px"><img src="./../Img/Delete.svg" width="15px" height="15px"></label>
+        <div class="listtodos" id="listcompleted">
+            <div class="option">
+                <div class="checkboxcontainer">
+                    <input type="checkbox" checked>
+                    <label>Remind Leela to do about</label>
+                </div>
+                <div style="margin-right: 10px;">
+                    <img class="cu-p" src="./../Img/edit.svg" width="35px" height="30px">
+                    <img class="cu-p" src="./../Img/Delete.svg" width="35px" height="30px">
+                </div>
+            </div>
         </div>
         <p style="position: absolute; bottom: 0px; left: 40%;">With love from, Leela Madhava Rao</p>
     </div>
