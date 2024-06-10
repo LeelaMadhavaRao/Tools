@@ -41,8 +41,8 @@ function Save(){
     localStorage.setItem('Completed',JSON.stringify(Completed));
 }
 function Retrive_Data(){
-    ToDo = localStorage.getItem('ToDo') || [];
-    Completed = localStorage.getItem('Completed') || [];
+    ToDo = JSON.parse(localStorage.getItem('ToDo')) || [];
+    Completed = JSON.parse(localStorage.getItem('Completed')) || [];
     RenderLayout();
 }
 function New(){
