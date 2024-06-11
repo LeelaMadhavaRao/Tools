@@ -48,6 +48,7 @@ function Go(){
         document.getElementById('paper').classList.remove('selected');
         document.getElementById('scissor').classList.remove('selected');
         document.getElementById('go_button').innerHTML = 'Go';
+        document.getElementById('result').innerHTML = '--';
         return;
     }
     if(SelectedChoice == null){
