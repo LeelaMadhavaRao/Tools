@@ -39,7 +39,7 @@ function ComputerChoice(){
     return Math.floor(Math.random() * 3);
 }
 
-function Go(){
+async function Go(){
     if(NewGame == true){
         NewGame = false;
         SelectedChoice = null;
@@ -77,18 +77,28 @@ function Go(){
     //             but1round.textContent="--";
     //             SelectedChoice="null";
     //     }
-
-    //Display Computer Choice
-    var src = null;
-    if(Computer_Choice === 0){
-        src = './../Img/rock.jpg';  
-    }else if(Computer_Choice === 1){
-        src = './../Img/paper.jpg';
-    }else{
-        src = './../Img/scissor.jpg';
-    }
+    //Display Animation
     document.getElementById('img').classList.remove('display-none');
-    document.getElementById('img').src = src;
+    var Img_Links = ['./../Img/rock.jpg','./../Img/paper.jpg','./../Img/scissor.jpg'];
+    i = 0;
+    var Animation = setInterval(()=>{
+        document.getElementById('img').src = Img_Links[i];
+        i = (i+1)%3;
+    },100);
+    //Wait for Animation to Complete
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    clearInterval(Animation);
+    
+    //Display Computer Choice
+    // var src = null;
+    // if(Computer_Choice === 0){
+    //     src = './../Img/rock.jpg';  
+    // }else if(Computer_Choice === 1){
+    //     src = './../Img/paper.jpg';
+    // }else{
+    //     src = './../Img/scissor.jpg';
+    // }
+    document.getElementById('img').src = Img_Links[Computer_Choice];
 
     //Caluculate Result
     var Result = Caluculate_Result(SelectedChoice,Computer_Choice); // 0-draw 1-User Won -1-Computer Won
