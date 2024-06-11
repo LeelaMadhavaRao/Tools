@@ -62,3 +62,6 @@ body{
 .display-none{
     display: none;
 }
+.cu-p{
+    cursor: pointer;
+}
