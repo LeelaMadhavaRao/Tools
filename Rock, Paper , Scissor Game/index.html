@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game</title>
     <link rel='stylesheet' type='text/css' media='screen' href='./index.css'>
+    <script src='./index.js'></script>
 </head>
 <body>
     <div class="Main">
@@ -20,18 +21,18 @@
             <div class="first">
                 
                 <div class="choices">
-                    <div class="rock"><img src="./../Img/rock.jpg" width="75px" height="75px"></div>
-                    <div class="paper" style="margin-left:5px ; margin-right: 5px;"><img src="./../Img/paper.jpg" width="75px" height="75px"></div>
-                    <div class="scissor"><img src="./../Img/scissor.jpg" width="75px" height="75px"></div>
+                    <div class="rock" onclick="choice(0)"><img src="./../Img/rock.jpg" width="75px" height="75px"></div>
+                    <div class="paper" onclick="choice(1)" style="margin-left:5px ; margin-right: 5px;"><img src="./../Img/paper.jpg" width="75px" height="75px"></div>
+                    <div class="scissor" onclick="choice(2)"><img src="./../Img/scissor.jpg" width="75px" height="75px"></div>
 
                    
                 </div>
                 
             </div>
             <div class="second">Vs</div>
-            <div class="third"></div>
+            <div class="third"><img id="img"></div>
         </div><br><br>
-        <button class="cu-p" style="width: 80px;height: 30px; margin-left: 22%; background-color: black;color: white; font-weight: bolder; border-radius: 10px;">Go</button><br><br>
+        <button id="go_button" style="width: 80px;height: 30px; margin-left: 22%; background-color: black;color: white; font-weight: bolder; border-radius: 10px;" onclick="Go()">Go</button><br><br>
         <div class="result" style="display: flex;justify-content: center;">
             <h4 style="font-weight: bolder;">Result :</h4>
             <p id="result"></p>
