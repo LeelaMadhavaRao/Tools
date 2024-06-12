@@ -31,10 +31,16 @@ body{
     font-weight: 400;
 }
 .header button{
-    width: 100px;
-    height: 30px;
+    width: 120px;
+    height: 40px;
     text-align: center;
     border: none;
     outline: none;
     border-radius: 10px;
+}
+.submit_next button{
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+
 }

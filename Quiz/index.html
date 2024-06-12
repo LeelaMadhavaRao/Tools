@@ -5,30 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <link rel="stylesheet" href="index.css">
+    <script src="./index.js"></script>
 </head>
 <body>
     <div class="Main" style="display: flex;flex-direction: column;justify-content: center;" >
         <div class="header" style="position: absolute;top: 0px;max-width: 640px;">
             <h1 style="margin-left: 5%;">Quiz</h1>
-            <button class="cu-p" onclick="ResetQuiz()" style="background-color: orange; font-weight: bolder;margin-right: 5%; cursor: pointer;">Reset Quiz</button>
+            <button class="cu-p" onclick="window.location.reload();" style="background-color: orange; font-weight: bolder;margin-right: 5%; cursor: pointer;">Restart Quiz</button>
         </div>
         <div class="question" style="display: flex;margin-left: 5%;">
-            <p>1Q.</p>
-            <p>Who was the first President of the United States?</p>
+            <p><span id="QuestionNo">1</span>Q.</p>
+            <p><span id="Question">Who was the first President of the United States?</span>?</p>
         </div>
         <div class="options" style="margin-left: 5%;">
-            <input id="a" type="radio">
-            <label for="a">Thomas Jefferson</label><br><br>
-            <input id="b" type="radio">
-            <label for="b">Abraham Lincoln</label><br><br>
-            <input id="c" type="radio">
-            <label for="c">George Washington</label><br><br>
-            <input id="d" type="radio">
-            <label for="d">John Adams</label><br><br>
+            <input id="a" type="radio" name="QuizApp">
+            <label for="a"><span id="Optiona">Thomas Jefferson</span></label><br><br>
+            <input id="b" type="radio" name="QuizApp">
+            <label for="b"><span id="Optionb">Abraham Lincoln</span></label><br><br>
+            <input id="c" type="radio" name="QuizApp">
+            <label for="c"><span id="Optionc">George Washington</span></label><br><br>
+            <input id="d" type="radio" name="QuizApp">
+            <label for="d"><span id="Optiond">John Adams</span></label><br><br>
         </div>
         <div class="submit_next" style="display: flex;justify-content:space-evenly;">
-            <button style="background-color: black;color: white;font-weight: bolder; border-radius: 10px;">submit</button>
-            <button style="background-color: black;color: white;font-weight: bolder; border-radius: 10px;">next</button>
+            <!-- <button style="background-color: black;color: white;font-weight: bolder; border-radius: 10px;">submit</button> -->
+            <button style="background-color: black;color: white;font-weight: bolder; border-radius: 10px;" id="Next_Button" onclick="NextQuestion()">next</button>
         </div>
         <p style="position: absolute; bottom: 0px; left: 40%;">With love ❤ from, Leela Madhava Rao</p>
 
