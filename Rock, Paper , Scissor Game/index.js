@@ -1,5 +1,10 @@
 var SelectedChoice = null;
 var NewGame = false;
+var score=document.getElementById('score');
+var x=score;
+if(x==='--'){
+    x=0;
+}
 // var score=document.getElementById("score");
 // var gobutton=document.getElementById("go_button");
 // var third=document.getElementById("img");
@@ -105,7 +110,15 @@ async function Go(){
 
     //Show Result
     document.getElementById('result').innerHTML = (Result===0)?'Draw':(Result===1)?'Won':'Lost';
-
+    if(Result === 1){
+        x=+2;
+        score.innerHTML= `${x}`;
+    }
+    if(Result === -1){
+        x=-2;
+        score.innerHTML=`${x}`;
+    }
+    
 
     //Update Stats
 
@@ -123,8 +136,10 @@ function Caluculate_Result(userChoice, computerChoice) {
     } else if ((userChoice === 0 && computerChoice === 2) ||
                (userChoice === 1 && computerChoice === 0) ||
                (userChoice === 2 && computerChoice === 1)) {
+                
         return 1; // User wins
     } else {
+        
         return -1; // Computer wins
     }
 }
