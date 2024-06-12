@@ -1,10 +1,6 @@
 var SelectedChoice = null;
 var NewGame = false;
-var score=document.getElementById('score');
-var x=score;
-if(x==='--'){
-    x=0;
-}
+
 // var score=document.getElementById("score");
 // var gobutton=document.getElementById("go_button");
 // var third=document.getElementById("img");
@@ -38,7 +34,7 @@ function choice(val){
     SelectedChoice=val;
 }
 function ResetStats(){
-
+   window.location.reload();
 }
 function ComputerChoice(){
     return Math.floor(Math.random() * 3);
@@ -91,7 +87,7 @@ async function Go(){
         i = (i+1)%3;
     },100);
     //Wait for Animation to Complete
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise(resolve => setTimeout(resolve, 500));
     clearInterval(Animation);
     
     //Display Computer Choice
@@ -110,19 +106,23 @@ async function Go(){
 
     //Show Result
     document.getElementById('result').innerHTML = (Result===0)?'Draw':(Result===1)?'Won':'Lost';
-    if(Result === 1){
-        x=+2;
-        score.innerHTML= `${x}`;
-    }
-    if(Result === -1){
-        x=-2;
-        score.innerHTML=`${x}`;
-    }
     
 
     //Update Stats
+    var score=(document.getElementById('score').innerHTML==="--")?0:Number(document.getElementById("score").innerHTML);
+    score+=Result;
+    document.getElementById("score").innerHTML=score;
+    
+    var won=(document.getElementById('won').innerHTML==="--")?0:Number(document.getElementById("won").innerHTML);
+    won+=(Result===1)?1:0;
+    document.getElementById('won').innerHTML=won;
 
+    var loss=(document.getElementById('loss').innerHTML==="--")?0:Number(document.getElementById("loss").innerHTML);
+    loss+=(Result===-1)?1:0;
+    document.getElementById('loss').innerHTML=loss;
 
+    document.getElementById('but2round').innerHTML=document.getElementById('but1round').innerHTML;
+    document.getElementById('but1round').innerHTML=(Result===0)?'Draw':(Result===1)?'Won':'Lost';
 
 
     //Change Button from 'Go' to Start Next round
@@ -136,10 +136,8 @@ function Caluculate_Result(userChoice, computerChoice) {
     } else if ((userChoice === 0 && computerChoice === 2) ||
                (userChoice === 1 && computerChoice === 0) ||
                (userChoice === 2 && computerChoice === 1)) {
-                
         return 1; // User wins
     } else {
-        
         return -1; // Computer wins
     }
 }
