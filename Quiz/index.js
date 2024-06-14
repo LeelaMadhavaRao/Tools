@@ -12,19 +12,45 @@ var Score = 0;
 function RenderQuestion(id){
     id = Number(id);
     if(id === Questions.length - 1){
-        alert("Reached Last Question!");
-        //Display Result
+        var html=" ";
+        html= `<h4 style="font-weight: bolder; color: green;">Score : ${Score}</h4>`;
+        document.getElementById('score').innerHTML=html;
         return;
     }
+    document.getElementById('a').checked=false;
+    document.getElementById('b').checked=false;
+    document.getElementById('c').checked=false;
+    document.getElementById('d').checked=false;
     document.getElementById('QuestionNo').innerHTML = id+1;
     document.getElementById('Question').innerHTML = Questions[id].Question;
     document.getElementById('Optiona').innerHTML = Questions[id].options[0];
     document.getElementById('Optionb').innerHTML = Questions[id].options[1];
     document.getElementById('Optionc').innerHTML = Questions[id].options[2];
     document.getElementById('Optiond').innerHTML = Questions[id].options[3];
+    if(document.getElementById('a').checked==true)
+        {
+            if(Questions[id].options[0]==Questions[id].answer)
+                ++Score;
+        }
+    if(document.getElementById('a').checked==true)
+        {
+            if(Questions[id].options[0]==Questions[id].answer)
+                ++Score;
+        }
+    if(document.getElementById('a').checked==true)
+        {
+            if(Questions[id].options[0]==Questions[id].answer)
+                ++Score;
+        }
+    if(document.getElementById('a').checked==true)
+        {
+            if(Questions[id].options[0]==Questions[id].answer)
+                ++Score;
+        }
     if(id === Questions.length - 2){
         document.getElementById('Next_Button').innerHTML = 'Submit';
     }
+    
     CurrentQuestion += 1;
     
 }
