@@ -115,11 +115,19 @@ function Edit(item){
     CurrOpen = item;
 }
 function EditSave(item){
-    ToDo[item] = document.getElementById('Leela.input.'+item).value;
-    Save();
-    RenderLayout();
-    CurrOpen = 'inf';
+    var inputElement = document.getElementById('Leela.input.' + item);
+    if (inputElement.value.trim() === "") {
+        alert('Enter valid label');
+        inputElement.focus();
+        return;
+    } else {
+        ToDo[item] = inputElement.value.trim();
+        Save();
+        RenderLayout();
+        CurrOpen = 'inf';
+    }
 }
+
 function Complete(item){
     var name = ToDo[item];
     ToDo.splice(item,1);
