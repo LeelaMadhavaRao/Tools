@@ -47,7 +47,7 @@ function RenderLayout(){
     for(i=0;i<Completed.length;i++){
         html += `<div class="option">
                 <div class="checkboxcontainer">
-                    <input type="checkbox" checked>
+                    <input type="checkbox" checked onchange='retodo(${i})'>
                     <label class='strike'>${Completed[i]}</label>
                 </div>
                 <div style="margin-right: 10px;">
@@ -130,5 +130,13 @@ function Complete(item){
 function DeleteComp(item){
     Completed.splice(item,1);
     Save();
+    RenderLayout();
+}
+function retodo(item){
+    var name=Completed[item];
+    alert(`${name}`);
+    ToDo.unshift(`${name}`);
+    DeleteComp(item);
+    save();
     RenderLayout();
 }
