@@ -65,3 +65,58 @@ body{
 .cu-p{
     cursor: pointer;
 }
+@media screen and (max-width: 425px) {
+    button.cu-p {
+        font-size: x-small;
+    }
+    header h3{
+        margin-left: 2%;
+        font-size: medium;
+    }
+    .options{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    img.cu-p{
+        width: 40px;
+        height: 40px;
+    }
+    div#paper.paper{
+        margin-left: 45px;
+        margin-right: 5px;
+    }
+    div.third{
+        width: 50px;
+        height: 50px;
+        background-color: #D9D9D9;
+    }
+    img#img{
+        width: 50px;
+        height: 50px;
+    }
+    button#go_button.cup{
+        width: 75px;
+        height: 30px;
+        margin-left: 18%;
+        background-color: black;
+        color: white;
+        font-weight: bolder;
+        border-radius: 10px;
+    }
+    .results, .score , .win\(or\)loss{
+        display: flex;
+        justify-content: center;
+        height: 30px;
+    }
+    .prev_games{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 120px;
+    }
+    p{
+        display: flex;
+        justify-content: center;
+    }
+}
