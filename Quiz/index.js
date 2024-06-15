@@ -1,7 +1,7 @@
 var Questions = [
     {'Question':' What is the chemical symbol for gold?','options':['Au','Ag','Pb','Fe'],'answer':'Au'},
     {'Question':'Who wrote the play "Romeo and Juliet"?','options':['William Shakespeare','Charles Dickens','Mark Twain','Jane Austen'],'answer':'William Shakespeare'},
-    {'Question':'What is the capital city of Canada?','options':[' Toronto','Vancouver','Ottawa','Montreal'],'answer':' Ottawa'},
+    {'Question':'What is the capital city of Canada?','options':[' Toronto','Vancouver','Ottawa','Montreal'],'answer':'Ottawa'},
     {'Question':'What is the value of π (pi) up to two decimal places?','options':['3.12','3.14','3.16','3.18'],'answer':'3.14'},
     {'Question':'Who was the first President of the United States?','options':['Thomas Jefferson','Abraham Lincoln','George Washington','John Adams'],'answer':'George Washington'},
     {'Question':'Question 6','options':['optiona','optionb','optionc','optiond'],'answer':'optiona'},
@@ -43,38 +43,47 @@ function NextQuestion(){
         {   
             console.log("clickeda");
             if(Questions[id].options[0]==Questions[id].answer)
-                console.log(`${Questions[id].options[0]}`);
-                console.log(`${Questions[id].answer}`);
-                Score+=2;
-                console.log(`${Score}`);
+                {
+                    console.log(`${Questions[id].options[0]}`);
+                    console.log(`${Questions[id].answer}`);
+                    Score+=2;
+                    console.log(`${Score}`);
+                }
             
         }
     if(document.getElementById('b').checked=== true)
         {
             console.log("clickedb");
             if(Questions[id].options[1]==Questions[id].answer)
-                console.log(`${Questions[id].options[1]}`);
-                console.log(`${Questions[id].answer}`);
-                Score+=2;
-                console.log(`${Score}`);
+                {
+                    console.log(`${Questions[id].options[1]}`);
+                    console.log(`${Questions[id].answer}`);
+                    Score+=2;
+                    console.log(`${Score}`);
+                }
         }
     if(document.getElementById('c').checked=== true)
         {
             console.log("clickedc");
-            if(Questions[id].options[2]==Questions[id].answer)
-                console.log(`${Questions[id].options[2]}`);
-                console.log(`${Questions[id].answer}`);
-                Score+=2;
-                console.log(`${Score}`);
+            if(Questions[id].options[2]=== Questions[id].answer)
+                {
+                    console.log(`${Questions[id].options[2]}`);
+                    console.log(`${Questions[id].answer}`);
+                    Score+=2;
+                    console.log(`${Score}`);
+                }
+                
         }
     if(document.getElementById('d').checked=== true)
         {
             console.log("clickedd");
             if(Questions[id].options[3]==Questions[id].answer)
-                console.log(`${Questions[id].options[3]}`);
-                console.log(`${Questions[id].answer}`);
-                Score+=2;
-                console.log(`${Score}`);
+                {
+                    console.log(`${Questions[id].options[3]}`);
+                    console.log(`${Questions[id].answer}`);
+                    Score+=2;
+                    console.log(`${Score}`);
+                }
         }
     RenderQuestion(CurrentQuestion);
 }

@@ -142,7 +142,7 @@ function DeleteComp(item){
 }
 function retodo(item){
     var name=Completed[item];
-    alert(`${name}`);
+    
     ToDo.unshift(`${name}`);
     DeleteComp(item);
     save();
