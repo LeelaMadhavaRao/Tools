@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js" defer></script>
+</head>
+<body>
+    <div class="Main">
+        <div class="header">
+            <h1 style="margin-left: 2%;">Weather App</h1>
+            <button class="cu-p" onclick="reset()" style="background-color: orange; margin-right: 2%;font-weight: bolder;">Reset</button>
+        </div>
+        <br><br><br><br><br><br>
+        <div class="city" style="display: flex; justify-content: center;">
+            <label for="city">Enter City: </label>
+            <select id="city">
+                <option value="hyderabad">Hyderabad</option>
+                <option value="vijayawada">Vijayawada</option>
+                <option value="bhimavaram">Bhimavaram</option>
+                <option value="Jangareddigudem">Jangareddigudem</option>
+                <option value="bengaluru">Bengaluru</option>
+                <option value="" selected>City</option>
+            </select>
+        </div>
+        <br><br><br><br><br>
+        <button style="display: flex; justify-content: center; align-items: center; margin-left:45%; width:120px; height: 30px; 
+            background-color: black;color: white; font-weight: bolder; border-radius: 10px;" onclick="go()">Go</button>
+        <br><br><br>
+        <h4 style="font-weight: bolder; display: flex;justify-content: center;">Weather : <span id="weather" style="font-weight: normal;">--</span></h4>
+        <br><br>
+        <p style="display: flex; justify-content:center;">With love ❤ from, Leela Madhava Rao</p>
+    </div>
+</body>
+</html>
