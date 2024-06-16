@@ -32,10 +32,9 @@ async function go() {
         const weatherData = await weatherResponse.json();
 
         const temperature = weatherData.current_weather.temperature;
-        
         document.getElementById("weather").innerHTML = temperature + ' °C';
-        alert('temperature Updated');
-
+        alert('Temperature updated');
+        
     } catch (error) {
         console.error('Request error:', error);
         alert('Failed to fetch weather data');
